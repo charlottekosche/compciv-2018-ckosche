@@ -1,5 +1,8 @@
-def print_hedz(url='https://www.stanford.edu/news/'):
-    
+import requests
+
+SAMPLE_URL = "https://wgetsnaps.github.io/stanford-edu-news/news/simple.html"
+
+def print_hedz(url=SAMPLE_URL):    
     txt = fetch_html(url)
     htags = parse_headline_tags(txt)
 
@@ -7,18 +10,29 @@ def print_hedz(url='https://www.stanford.edu/news/'):
         hedtxt = extract_headline_text(t)
         print(hedtxt)
 
+def fetch_html(url):
+    resp = requests.get(url)
+    print(resp.text)
+    return resp.text
+
+
+
+
+
+if __name__ == '__main__':
+    stuff = fetch_html(SAMPLE_URL)
+    print('hello world')
+    print(stuff)
+
+
 
 # def extract_headline_text(txt):
     
 
 #def parse_headline_tags(txt):
 
-def fetch_html(url):
-    
-    import requests
-    resp = requests.get(url)
-    return str(resp.content)
 
+"""
 txt = fetch_html('https://wgetsnaps.github.io/stanford-edu-news/news/simple.html')
     
 htags_list = []    
@@ -30,6 +44,8 @@ for line in parsed_strings:
 print (len(parsed_strings))
 
 #print (parse_headline_tags(txt))
+"""
+
 
 """
 print_hedz(url='https://www.stanford.edu/news/'):
