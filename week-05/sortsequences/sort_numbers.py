@@ -13,6 +13,7 @@ def numerical_order():
     Sort the list of numbers in numerical order
     """
     # fill it out
+    return sorted(NUMBER_LIST)
 
 def as_absolute_value():
     """
@@ -20,6 +21,7 @@ def as_absolute_value():
     regardless of positive or negative sign
     """
     # fill it out
+    return sorted(NUMBER_LIST, key=abs)
 
 
 def as_inverse_number():
@@ -28,4 +30,6 @@ def as_inverse_number():
     The bigger the number, the smaller its inverse, and vice versa
     """
     # fill it out
-
+    def inverse_number(x):
+        return 1/x
+    return sorted(NUMBER_LIST, key=inverse_number)

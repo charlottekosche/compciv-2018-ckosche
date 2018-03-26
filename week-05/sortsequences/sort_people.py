@@ -15,12 +15,18 @@ def youngest():
     sort by age in ascending order
     """
     # fill it out
+    def sort_by_age(x):
+        return x['age']
+    return sorted(PEOPLE_LIST, key=sort_by_age)
 
 def oldest():
     """
     sort by age in descending order
     """
     # fill it out
+    def sort_by_age(x):
+        return x['age']
+    return sorted(PEOPLE_LIST, key=sort_by_age, reverse=True)
 
 
 def name_reverse_alpha():
@@ -29,3 +35,8 @@ def name_reverse_alpha():
 
 def country_then_age():
     # fill it out
+    def sort_by_country_then_age(x):
+        country = x['country']
+        age = x['age']
+        return (country, age)
+    return sorted(PEOPLE_LIST, key=sort_by_country_then_age)

@@ -17,6 +17,9 @@ def alpha_case_insensitive():
     capitalization
     """
     # fill it out
+    def no_regard_to_caps(x):
+        return x.lower()
+    return sorted(STRING_LIST, key=no_regard_to_caps)
 
 
 
@@ -25,6 +28,9 @@ def by_longest_length():
     Sort in descending order of length of strings
     """
     # fill it out
+    def sorted_by_len(x):
+        return len(x)
+    return sorted(STRING_LIST, key=sorted_by_len, reverse=True)
 
 
 def filter_and_sort_number_strings():
@@ -38,6 +44,13 @@ def filter_and_sort_number_strings():
 
     """
     # fill it out
+    number_strings = []
+    for i in STRING_LIST:
+        if i.isnumeric():
+            number_strings.append(i)
+    def sort_as_strings(x):
+        return str(x)
+    return sorted(number_strings, key=sort_as_strings)
 
 
 def filter_and_sort_number_strings_as_numbers():
@@ -52,5 +65,10 @@ def filter_and_sort_number_strings_as_numbers():
        into an actual number
     """
     # fill it out
-
-
+    number_strings = []
+    for i in STRING_LIST:
+        if i.isnumeric():
+            number_strings.append(i)
+    def sort_as_numbers(x):
+        return int(x)
+    return sorted(number_strings, key=sort_as_numbers)
